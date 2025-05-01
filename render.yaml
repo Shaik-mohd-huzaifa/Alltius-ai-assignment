@@ -17,10 +17,10 @@ services:
   - type: web
     name: insurance-chatbot-frontend
     runtime: static
-    buildCommand: cd frontend && npm install && npm run build
+    buildCommand: cd frontend && npm install react react-dom && npm run build
     rootDir: frontend/dist
     envVars:
       - key: NODE_VERSION
         value: 18.x
       - key: VITE_API_URL
-        value: https://insurance-chatbot-api.onrender.com
+        value: https://alltius-ai-assignment.onrender.com

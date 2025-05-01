@@ -8,15 +8,36 @@
   status = 200
 
 [[headers]]
+  for = "/"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+# JavaScript files
+[[headers]]
   for = "/*.js"
   [headers.values]
-    Content-Type = "application/javascript"
+    Content-Type = "application/javascript; charset=utf-8"
 
+# JavaScript module files
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+# JavaScript module files (alternative extension)
+[[headers]]
+  for = "/assets/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+
+# CSS files
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Content-Type = "text/css"
+    Content-Type = "text/css; charset=utf-8"
 
+# SVG files
 [[headers]]
   for = "/*.svg"
   [headers.values]
