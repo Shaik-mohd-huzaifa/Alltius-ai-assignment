@@ -1,0 +1,26 @@
+services:
+  # Backend API service
+  - type: web
+    name: insurance-chatbot-api
+    runtime: python
+    buildCommand: pip install -r insurance-chatbot/requirements.txt
+    startCommand: cd insurance-chatbot && gunicorn src.api:app
+    envVars:
+      - key: NEBIUS_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.10.4
+      - key: PYTHONPATH
+        value: insurance-chatbot
+
+  # Frontend static site  
+  - type: web
+    name: insurance-chatbot-frontend
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    rootDir: frontend/dist
+    envVars:
+      - key: NODE_VERSION
+        value: 18.x
+      - key: VITE_API_URL
+        value: https://insurance-chatbot-api.onrender.com

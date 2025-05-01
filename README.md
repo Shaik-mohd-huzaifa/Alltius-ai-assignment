@@ -174,6 +174,32 @@ npm run dev
 
 The frontend will be available at `http://localhost:5173` (or the port shown in your console).
 
+## Deployment on Render
+
+This project is set up for easy deployment on Render using the `render.yaml` configuration file.
+
+### Backend Deployment
+
+1. Create a new Render account or log in to your existing account at https://render.com
+2. Connect your GitHub repository to Render
+3. Render will automatically detect the `render.yaml` file and suggest creating the services defined in it
+4. Click "Create Services" to set up both the backend and frontend
+5. For the backend service, add your Nebius API key as an environment variable:
+   - Key: `NEBIUS_API_KEY`
+   - Value: Your actual API key
+
+### Frontend Deployment
+
+The frontend will be automatically deployed along with the backend through the `render.yaml` configuration.
+
+1. Once deployment is complete, open the frontend URL provided by Render
+2. The frontend is pre-configured to connect to the backend API through the `VITE_API_URL` environment variable
+
+### Redeployment
+
+- Render will automatically redeploy your application whenever you push changes to the main branch of your repository
+- You can also manually trigger a redeployment through the Render dashboard
+
 ## API Reference
 
 ### Chat Endpoint
@@ -199,21 +225,6 @@ The frontend will be available at `http://localhost:5173` (or the port shown in 
     "session_id": "optional-session-id",
     "timestamp": 1619712345.6789,
     "using_rag": true
-  }
-  ```
-
-### Health Check Endpoint
-
-- **URL**: `/api/health`
-- **Method**: `GET`
-- **Response**:
-  ```json
-  {
-    "status": "ok",
-    "timestamp": 1619712345.6789,
-    "chatbot_initialized": true,
-    "rag_enabled": true,
-    "vector_index_size": 267
   }
   ```
 

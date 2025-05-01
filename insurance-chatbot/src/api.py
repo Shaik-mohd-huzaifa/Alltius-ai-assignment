@@ -27,7 +27,11 @@ load_dotenv()
 
 # Create Flask app
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+# Configure CORS to allow requests from the deployed frontend
+CORS(app, resources={r"/api/*": {"origins": [
+    "http://localhost:5173",  # Local development 
+    "https://insurance-chatbot-frontend.onrender.com"  # Render deployment
+]}})
 
 # Set up absolute path to vector store
 vector_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "vectorstore")
