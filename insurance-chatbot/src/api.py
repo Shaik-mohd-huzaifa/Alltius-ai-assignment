@@ -30,7 +30,10 @@ app = Flask(__name__)
 # Configure CORS to allow requests from the deployed frontend
 CORS(app, resources={r"/api/*": {"origins": [
     "http://localhost:5173",  # Local development 
-    "https://insurance-chatbot-frontend.onrender.com"  # Render deployment
+    "https://insurance-chatbot-frontend.onrender.com",  # Render deployment
+    "https://alltius-ai-assignment.netlify.app",  # Netlify deployment
+    "https://*.netlify.app",  # Any Netlify subdomain
+    "https://alltius-insurance-chatbot.windsurf.build"  # Windsurf deployment
 ]}})
 
 # Set up absolute path to vector store
