@@ -18,6 +18,7 @@ instance/
 .pytest_cache/
 ./insurance-chatbot/*.env
 *.env
+*/frontend/*.env.production
 
 # Flask specific
 *.pyc
