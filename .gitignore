@@ -1,0 +1,93 @@
+# === PYTHON / FLASK ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.spec
+*.sqlite3
+instance/
+*.db
+*.log
+.mypy_cache/
+.pytest_cache/
+./insurance-chatbot/*.env
+*.env
+
+# Flask specific
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.swp
+
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+env.bak/
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# === REACT / NODE ===
+node_modules/
+build/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite
+.vite/
+vite.svg
+vite.config.*
+
+# React env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === OpenAI keys and secrets ===
+openai_api_key.txt
+openai_secret_*.json
+*.key
+*.pem
+
+# === OS / SYSTEM FILES ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Testing & Coverage ===
+.coverage
+coverage.*
+htmlcov/
+*.cover
+*.py,cover
+nosetests.xml
+*.mocha
+test-results/
+junit.xml
+
+# === Others ===
+*.tmp
+*.bak
+*.swp
+
